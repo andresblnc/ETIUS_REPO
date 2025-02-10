@@ -8,17 +8,18 @@ import random
 def read_urls_from_csv(file_path):
     urls = []
     with open(file_path, mode='r', newline='', encoding='utf-8') as csvfile:
-        reader = csv.DictReader(csvfile)
+        reader = csv.DictReader(csvfile, delimiter='|')
         for row in reader:
             if row['processed'] == '0':
                 urls.append(row)
+    csvfile.close()
     return urls
 
 # Función para escribir URLs procesadas en el archivo CSV
 def write_urls_to_csv(file_path, urls):
     with open(file_path, mode='w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['link', 'processed', 'info']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)  # Asegura que los valores se encierren en comillas dobles
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter='|')
         writer.writeheader()
         writer.writerows(urls)
         csvfile.close()

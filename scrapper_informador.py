@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import csv
+import random
 
 # Función para leer URLs desde un archivo CSV
 def read_urls_from_csv(file_path):
@@ -20,6 +21,7 @@ def write_urls_to_csv(file_path, urls):
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)  # Asegura que los valores se encierren en comillas dobles
         writer.writeheader()
         writer.writerows(urls)
+        csvfile.close()
 
 # Función para procesar una URL y extraer información
 def process_url(url):
@@ -61,7 +63,7 @@ for url in urls:
     print(f"Procesando URL: {url['link']}")
     process_url(url)
     print("\n" + "="*50 + "\n")
-    time.sleep(5)
+    time.sleep(random.randint(5, 10))
 
 # Escribir las URLs actualizadas en el archivo CSV
 write_urls_to_csv("informador_links.csv", urls)

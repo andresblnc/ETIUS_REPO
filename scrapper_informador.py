@@ -5,7 +5,7 @@ import csv
 import random
 
 # Función para leer URLs desde un archivo CSV
-def read_urls_from_csv(file_path):
+def read_urls_not_processed_from_csv(file_path):
     urls = []
     with open(file_path, mode='r', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile, delimiter='|')
@@ -29,7 +29,7 @@ def process_url(url):
     # Hacer la solicitud HTTP
     response = requests.get(url['link'])
 
-    # Verificar que la solicitud fue exitosa (código 200)
+    # Verificar que la solicitud fue exitosa
     if response.status_code == 200:
         # Parsear el contenido HTML con BeautifulSoup
         soup = BeautifulSoup(response.text, "html.parser")
@@ -57,7 +57,7 @@ def process_url(url):
         url['info'] = "Error al acceder"
 
 # Leer URLs desde el archivo CSV
-urls = read_urls_from_csv("informador_links.csv")
+urls = read_urls_not_processed_from_csv("informador_links.csv")
 
 # Procesar cada URL en la lista
 for url in urls:

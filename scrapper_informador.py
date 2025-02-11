@@ -31,13 +31,14 @@ def process_url(url):
         else:
             url['fecha'] = 'No disponible'
         
-        # Procesar párrafos
+        # Procesar párrafos sin saltos de línea
         seen = set()
         excluded_prefixes = ("LEE:", "Por:")
         paragraphs = []
         
         for p in soup.find_all("p"):
-            text = p.text.strip()
+            # Remover saltos de línea y limpiar el texto
+            text = p.text.replace("\n", " ").strip()
             if (text and text not in seen
                 and not text.startswith(excluded_prefixes)
                 and "Términos y Condiciones" not in text

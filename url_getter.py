@@ -1,4 +1,5 @@
 # https://serpapi.com/search-api
+# https://stackoverflow.com/questions/23359083/how-to-convert-webpage-into-pdf-by-using-python
 
 import os
 import csv
@@ -32,6 +33,12 @@ results = client.search(
     num=total,
     as_qdr=f"w{weeks}"
 )
+
+# Si no encuentra información o hay errores.
+if 'error' in results:
+    print("Error:", results['error'])
+    exit()
+
 results = results['organic_results']
 
 # Antes de abrir el archivo, verificamos que si ya existe y no termina en salto de línea, lo agregamos

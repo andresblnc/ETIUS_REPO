@@ -58,7 +58,6 @@ def process_url(url):
 
 if __name__ == "__main__":
     urls = read_urls_from_csv("informador_links.csv")
-    
     for url in urls:
         if url['processed'] == '0':
             print(f"\nProcesando: {url['link']}")

@@ -1,5 +1,4 @@
 # https://serpapi.com/search-api
-# https://stackoverflow.com/questions/23359083/how-to-convert-webpage-into-pdf-by-using-python
 
 import os
 import csv

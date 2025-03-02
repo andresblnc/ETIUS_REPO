@@ -1,7 +1,6 @@
 import csv
 import requests
 from weasyprint import HTML
-import time
 
 # Path to your CSV file
 csv_file = 'informador_links.csv'

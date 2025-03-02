@@ -1,5 +1,4 @@
-# Es necesario poner el teclado en ingles 
-
+# Es necesario poner el teclado en ingles y no poner en pantalla completa. 
 import pyautogui
 import time
 import csv
@@ -8,7 +7,6 @@ import csv
 csv_file = 'informador_links.csv'
 
 # pyautogui.displayMousePosition()
-
 
 # open safari
 pyautogui.keyDown('command')

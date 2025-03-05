@@ -31,7 +31,7 @@ with open(csv_file, newline='', encoding='utf-8') as file:
         time.sleep(1)
         pyautogui.write(url)
         pyautogui.press('enter')
-        time.sleep(4)
+        time.sleep(6)
 
         # Choose to print page
         pyautogui.keyDown('command')

@@ -4,7 +4,7 @@ import time
 import csv
 
 # Path to your CSV file
-csv_file = 'informador_links.csv'
+csv_file = 'links.csv'
 
 # pyautogui.displayMousePosition()
 

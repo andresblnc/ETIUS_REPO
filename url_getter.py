@@ -6,23 +6,22 @@ import serpapi
 from dotenv import load_dotenv
 load_dotenv()
 
-CSV_PATH = "informador_links.csv"
+CSV_PATH = "links.csv"
 file_exists = os.path.isfile(CSV_PATH)
 
 api_key = os.getenv("SERPAPI_KEY")
 client = serpapi.Client(api_key=api_key)
 
 site = input("Ingrese el sitio web (ej. informador.mx): ")
-keywords = input("Ingrese las palabras clave (ej. agua jalisco): ")
+keywords = input("Ingrese la palabra de busqueda (ej. agua, jalisco): ")
 
 
 # Separamos las keywords y las encerramos entre comillas dobles
-quoted_keywords = " ".join([f'"{word}"' for word in keywords.split()])
-query = f"site:{site} {quoted_keywords}"
+query = f"site:{site} {keywords}"
 print("Query final:", query)
 print()
 
-weeks = int(input("Semanas atras a buscar: "))
+months = int(input("Meses atras a buscar: "))
 total = int(input("Numero de resultados a buscar: "))
 
 results = client.search(
@@ -30,7 +29,7 @@ results = client.search(
     engine="google",
     hl="es",
     num=total,
-    as_qdr=f"w{weeks}"
+    as_qdr=f"m{months}"
 )
 
 # Si no encuentra información o hay errores.
@@ -48,11 +47,9 @@ if file_exists and os.stat(CSV_PATH).st_size > 0:
             with open(CSV_PATH, "a", newline="") as csvfile:
                 csvfile.write("\n")
 
-# Guardamos los resultados en el CSV siguiendo el formato: link|processed|info|fecha
+# Guardamos los resultados en el CSV siguiendo el formato: link|processed
 with open(CSV_PATH, "a", newline="") as csvfile:
-    writer = csv.writer(csvfile, delimiter="|", lineterminator="\n")
-    # Si el archivo no existe o está vacío, escribimos la cabecera
-    if not file_exists or os.stat(CSV_PATH).st_size == 0:
-        writer.writerow(["link", "processed", "info", "fecha"])
+    writer = csv.writer(csvfile, delimiter="|")
     for result in results:
-        writer.writerow([result['link'], "0", "", ""])
+        link = result['link']
+        writer.writerow([link, 0])

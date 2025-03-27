@@ -24,8 +24,8 @@ def random_dates_for_week(start_date, end_date):
     return random_dates
 
 # Ejemplo de uso
-start_date = datetime.strptime('1975-01-01', '%Y-%m-%d')
-end_date = datetime.strptime('1975-12-31', '%Y-%m-%d')
+start_date = datetime.strptime('2025-03-30', '%Y-%m-%d')
+end_date = datetime.strptime('2025-05-28', '%Y-%m-%d')
 random_dates = random_dates_for_week(start_date, end_date)
 for date in random_dates:
     print(date.strftime('%A, %Y-%m-%d'))

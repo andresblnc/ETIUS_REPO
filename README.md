@@ -26,7 +26,7 @@ Para utilizar los programas es requisito contar con python instaladado. Para con
     # venv\Scripts\activate  # En Windows
     ```
 3.  **Instala las dependencias:**
-    Asegúrate de tener `pip` actualizado (`pip install --upgrade pip`). Luego, instala las librerías necesarias desde el archivo [`requirements.txt`](/Users/andresblanco/Desktop/ISC/2025/ETIUS/ETIUS_REPO/requirements.txt):
+    Asegúrate de tener `pip` actualizado (`pip install --upgrade pip`). Luego, instala las librerías necesarias desde el archivo [`requirements.txt`](requirements.txt):
     ```bash
     pip install -r requirements.txt
     ```
@@ -39,11 +39,13 @@ Para ejecutar cada uno de los programas es de la siguiente forma.
 python nombredelprograma.py
 ```
 
-Para utilizar el programa de url_getter.py es necesario contar con una API_KEY para usar SerpAPI. Se puede conseguir una clave gratuita desde la página web indicada en el código. Esta clave debe colocarse dentro del archivo .env de la siguiente forma:
-
+Para utilizar el programa de url_getter.py es necesario contar con una API_KEY para usar SerpAPI. Se puede conseguir una clave gratuita desde la página web indicada en el código. Esta clave debe colocarse dentro del archivo .env de la siguiente forma:y-a
 ```
 SERPAPI_KEY=tu_key
 ```
+
+Para ver como debe de funcionar la descarga de PDFs a partir de los links puedes ver el video de ejemplo en:
+[`Ejemplo.mov`](Ejemplo.mov)
 
 ## Dependencias Principales
 

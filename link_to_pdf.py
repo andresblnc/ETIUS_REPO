@@ -4,8 +4,9 @@ import time
 import csv
 
 # Path to your CSV file
-csv_file = 'links.csv'
+csv_file = 'Data/links.csv'
 
+# Descomenta la siguiente línea para ver la posición del mouse y así poder cambiar las coordenadas de los clicks dependiendo de tu computadora
 # pyautogui.displayMousePosition()
 
 # open safari

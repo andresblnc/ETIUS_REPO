@@ -12,7 +12,7 @@ Además contiene codigos como webscrapper con 3 opciones diferentes que al final
 
 ## Instalación
 
-Para utilizar los programas es requisito contar con python instaladado. Para configurar el entorno de desarrollo y ejecutar los programas de este repositorio, sigue estos pasos:
+Para utilizar los programas es requisito contar con Python instalado. Para configurar el entorno de desarrollo y ejecutar los programas de este repositorio, sigue estos pasos desde la terminal (o bash si estás en Windows). Para esto es necesario tener Git instalado:
 
 1.  **Clona el repositorio:**
     ```bash
